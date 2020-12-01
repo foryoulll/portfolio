@@ -1,0 +1,227 @@
+# portfolio02
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    </link>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+
+    <!--iconawsome実装-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!--JQ実装-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="header_logo">
+                <h1>Write</h1>
+                <p class="font_gray">書くためのテーマ</p>
+            </div>
+
+            <div id="header_list" class="font_gray">
+                <ul>
+                    <li>ホーム</li>
+                    <li>ページ</li>
+                    <li>タイポグラフィー</li>
+                    <li>お問い合わせ</li>
+                </ul>
+            </div>
+            <!--検索フォーム-->
+            <form role="search" action="index.html">
+                <label>
+                    <input id="header-serch-input" class="search-input" placeholder="検索 &hellip;" type="search" 
+                        value="" name="search-key">
+                </label>
+            </form>
+            <div id="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <!--<form role="search" method="get" class="search-form" action="http://demo.themegraphy.com/write-ja/">
+				<label>
+					<span class="screen-reader-text">検索:</span>
+					<input type="search" class="search-field" placeholder="検索 &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="検索" />
+			</form>		-->
+
+        </header>
+    </div>
+    <div id="hidden_list" class="font_gray">
+        <!--メニューバー自作-->
+        <div id="bars">
+            <div id="menu-bar">
+                <hr>
+                <hr>
+                <hr>
+            </div>
+
+            <div id="menu-close">
+                <!--バツ印を自力で作る-->
+                <hr id="bar01">
+                <hr id="bar02">
+            </div>
+        </div>
+        <div id="header_list_modal">
+            <ul>
+                <li>ホーム</li>
+                <li>ページ</li>
+                <li>タイポグラフィー</li>
+                <li>お問い合わせ</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="img">
+        <img id="img1" src="img1.jpg">
+    </div>
+    <div class="container">
+        <main>
+            <p id="midashi" class="font_gray">Writeは文章を書く人のためのミニマルなWordPressテーマです。装飾を極限まで省いたデザインは、あなたの文章を主役にします。</p>
+
+            <div id="article">
+
+                <!--この辺りはJavaScriptのループ処理で表示させることにする
+            <div class="theme">
+                <p class="date font_gray">日付を表示</p>
+                <h1 class="midashi">画像付きの投稿</h1>
+                <p class="contents font_gray">
+                    吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+            </div>
+           <div class="theme">
+                <p class="font_gray" id="date">2018年3月5日</p>
+                <h1>引用付きの投稿</h1>
+                <p class="contenta font_gray">
+                    吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれ…
+                </p>
+            </div>
+            <div class="theme">
+                <p class="font_gray" id="date">2018年3月5日</p>
+                <h1>コメント付きの投稿</h1>
+                <p class="contenta font_gray">
+                    吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+                    しかもあとで聞くとそ…</p>
+            </div>
+            <div class="theme">
+                <p class="font_gray" id="date">2018年3月3日</p>
+                <h1>吾輩は猫である</h1>
+                <p class="contenta font_gray">
+                    吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+                    しかもあとで聞くとそ…</p>
+            </div>
+            <div class="theme">
+                <p class="font_gray" id="date">2018年3月3日</p>
+                <h1>名前はまだ無い。どこで生れたかとんと見当がつかぬ。</h1>
+                <p class="contenta font_gray">
+                    吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+                    しかもあとで聞くとそ…</p>
+            </div>
+-->
+            </div>
+
+            <div id="pagges_parent">
+                <div id="pages">
+                    <div id="page01" class="go_page font_gray">1</div>
+                    <div id="page02" class="go_page font_gray">2</div>
+                    <div id="page03" class="go_page font_gray">3</div>
+                    <div id="next_page" class="go_page font_gray">次へ>></div>
+                </div>
+            </div>
+
+        </main>
+
+        <hr>
+
+        <footer>
+            <div class="footer_articles_parent">
+
+                <div class="footer_articles">
+                    <div id="profile">
+                        <div id="inner-profile">
+                            <img id="img02" src="img02.png">
+                            <div id="name_and_icon">
+                                <h3>John Doe</h3>
+                                <!--ツイッターなどアイコン表示-->
+                                <ul class="follow-me" id="profile_follow_me">
+                                    <li><a href="https://twitter.com/WordPress"><i class="fab fa-twitter fa-lg"></i></a>
+                                    </li>
+                                    <li><a href="https://www.facebook.com/WordPress"><i
+                                                class="fab fa-facebook-f fa-lg"></i></a></li>
+                                    <li><a href="https://www.instagram.com/unsplash/"><i
+                                                class="fab fa-instagram fa-lg"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="font_gray" id=profile_text"">
+                            これはプロフィールウィジェットです。ここにはプロフィール画像・名前・自己紹介文・ソーシャルリンク（最大7つ）を設定することができます。</p>
+                    </div>
+                </div>
+
+                <div class="footer_articles">
+                    <div id="footer_infomation">
+                        <h3 class="footer_article_title">フッター右</h3>
+                        <p class="font_gray">3つのフッター右ウィジェットエリアはフッターの右側に表示され、使用する数によって幅は自動的に調整されます。1つも使用しない場合は表示されません。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer_articles">
+                    <div id="recently_article">
+                        <h3 class="footer_article_title">最近の投稿</h3>
+                        <!--Javascriptに記載-->
+                    </div>
+                </div>
+
+                <div class="footer_articles">
+                    <div id="footer_category">
+                        <h3 class="footer_article_title">カテゴリー</h3>
+                        <div>
+                            <h3 class="font_gray footer_article_midashi">サンプル投稿</h3>
+                        </div>
+                        <div>
+                            <h3 class="font_gray footer_article_midashi">投稿フォーマット</h3>
+                        </div>
+                        <div>
+                            <h3 class="font_gray footer_article_midashi">普通の投稿</h3>
+                        </div>
+                        <!--<input type="serch" placeholder="検索...">-->
+                        <form action="index.html">
+                            <input class="search-input" placeholder="検索..." type="text" name="search-key">
+                            <!--<input id="search-buttom" class="fas" type="submit" value=" " mathod="get">-->
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="footer_accees">
+                <!--ツイッターなどアイコン表示 アイコンの大きさはクラスで指定-->
+                <ul class="follow-me">
+                    <li><a href="https://twitter.com/WordPress"><i class="fab fa-twitter fa-lg"></i></a></li>
+                    <li><a href="https://www.facebook.com/WordPress"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                    <li><a href="https://www.instagram.com/unsplash/"><i class="fab fa-instagram fa-lg"></i></a></li>
+                </ul>
+                <div class="site_credit">
+                    <p>Powered by <a href="#">WordPress</a></p>
+                    <p>Theme:<a href="#">Write</a> by Themegrapy</p>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="jqery.js"></script>
+</body>
+
+</html>
